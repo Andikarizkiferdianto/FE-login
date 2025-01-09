@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "../style/register.css"
+import { API_DUMMY } from "../utils/base_url";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -16,8 +17,7 @@ export default function Register() {
     // try catch untuk memastikan trjdi kesalahan
     try {
       // library opensource yg digunkan untuk request data melalui http
-      await axios.post(
-        "http://localhost:2026/api/user/register",
+      await axios.post(`${API_DUMMY}/api/user/register `,
         {
           email: email,
           password: password,
