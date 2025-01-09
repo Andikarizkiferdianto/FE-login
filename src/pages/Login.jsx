@@ -8,6 +8,7 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // const [username, setUsername] = useState("");                              
+  // eslint-disable-next-line no-unused-vars
   const navigate = useNavigate();
 
   const register = async (e) => {
@@ -27,12 +28,13 @@ export default function Register() {
       // Sweet alert
       Swal.fire({
         icon: "success",
-        title: "Berhasil Register!!",
+        title: "Berhasil Login!!",
         showConfirmButton: false,
         timer: 1500,
       });
       setTimeout(() => {
-        navigate("/login");
+        // navigate("/login");
+        window.location.href = "/landingpage"
       }, 1500);
     } catch (error) {
       console.log(error);
@@ -42,7 +44,6 @@ export default function Register() {
     <body className="body1 md:text-base lg:h-100vh sm:text-sm">
       <div className="container1">
         <pre><h3>     Login</h3></pre>
-        
         <form onSubmit={register} method="POST">
           <label>Email</label>
           <br />
